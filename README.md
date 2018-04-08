@@ -1,5 +1,17 @@
 # debian-post-install
 > Debian tunning after fresh install :sparkles:
 ```bash
-git clone https://github.com/rberbille/debian-post-install
+apt update && apt full-upgrade -yy
+```
+Téléchargement du script
+```bash
+git clone https://github.com/rberbille/debian-post-install.git
+```
+Attribution des droits d'execution pour lancer le script
+```bash
+cd debian-post-install && chmod +x setup.sh
+```
+Lancement du script :rocket:
+```bash
+./setup.sh
 ```
