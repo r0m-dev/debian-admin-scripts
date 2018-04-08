@@ -7,6 +7,7 @@ echo -e 'LANG="fr_FR.UTF-8"\nLANGUAGE="fr_FR:fr"\n' > /etc/default/locale
 echo 'root: romain.berbille@gmail.com' > /etc/aliases
 # Install pre-requisite
 apt install htop fail2ban net-tools nmap apt-transport-https dirmngr neofetch git build-essential unzip -yy
+apt install smartmontools -yy
 # Copy neofetch conf
 # ....
 # Install Docker
