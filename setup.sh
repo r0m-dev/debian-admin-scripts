@@ -1,5 +1,8 @@
 #!/bin/bash
 apt update && apt full-upgrade -yy
+# Configure locale
+locale-gen --purge en_US.UTF-8
+echo -e 'LANG="fr_FR.UTF-8"\nLANGUAGE="fr_FR:fr"\n' > /etc/default/locale
 # Install pre-requisite
 apt install htop fail2ban net-tools nmap apt-transport-https dirmngr neofetch git build-essential unzip -yy
 # Copy neofetch conf
