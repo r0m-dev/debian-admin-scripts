@@ -3,6 +3,10 @@
 ```bash
 apt update && apt full-upgrade -yy
 ```
+Installation de git
+```bash
+apt install git -yy
+```
 Téléchargement du script
 ```bash
 git clone https://github.com/rberbille/debian-post-install.git
