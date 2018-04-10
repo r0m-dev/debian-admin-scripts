@@ -12,6 +12,9 @@ apt install htop fail2ban net-tools nmap apt-transport-https dirmngr neofetch gi
 apt install smartmontools -yy
 # Copy neofetch conf
 mkdir -p $HOME/.config/neofetch/ && mv config/config-neofetch $HOME/.config/neofetch/config
+# Purge /etc/motd
+echo '' > /etc/motd
+service ssh reload
 # Install Docker
 echo 'deb https://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list.d/docker.list
 apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
