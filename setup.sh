@@ -8,7 +8,7 @@ echo -e 'LANG="fr_FR.UTF-8"\nLANGUAGE="fr_FR:fr"\n' > /etc/default/locale
 # Mail notification
 echo 'root: $email' > /etc/aliases
 # Install pre-requisite
-apt install htop fail2ban net-tools nmap apt-transport-https dirmngr neofetch git build-essential certbot unzip -yy
+apt install htop fail2ban net-tools nmap apt-transport-https dirmngr neofetch mc build-essential certbot unzip -yy
 apt install smartmontools -yy
 # Copy neofetch conf
 mkdir -p $HOME/.config/neofetch/ && mv config/config-neofetch $HOME/.config/neofetch/config
