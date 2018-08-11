@@ -1,14 +1,20 @@
 #!/bin/sh
+echo 'Interface ? : '
+read WIFIETH
+echo 'SSID : '
+read WIFISSID
+echo 'Clé de cryptage : '
+read WIFIKEY
 apt-get update && apt-get install hostapd -yy
 HOSTAPDCONF=/etc/hostapd/hostapd.conf
 
 cat > $HOSTAPDCONF <<EOF
 # This is the name of the WiFi interface we configured above
-interface=wlan0
+interface=$WIFIETH
 # Use the nl80211 driver with the brcmfmac driver
 driver=nl80211
 # This is the name of the network
-ssid=HotspotRPI
+ssid=$WIFISSID
 # Use the 2.4GHz band
 hw_mode=g
 # Use channel 6
@@ -30,12 +36,21 @@ wpa=2
 # Use a pre-shared key
 wpa_key_mgmt=WPA-PSK
 # The network passphrase
-wpa_passphrase=Altec:19
+wpa_passphrase=$WIFIKEY
 # Use AES, instead of TKIP
 rsn_pairwise=CCMP
 EOF
 
 # Activation de la configuration
 sed -i '/DAEMON_CONF=/c\DAEMON_CONF=\"/etc/hostapd/hostapd.conf\"' /etc/default/hostapd
-
-systemctl start hostapd
+# Activation du routage
+sed -i '/net.ipv4.ip_forward=/c\net.ipv4.ip_forward=\"1\"' /etc/sysctl.conf
+# Création de la régle de NAT
+iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
+# Sauvegarde de la régle de NAT
+sh -c "iptables-save > /etc/iptables.ipv4.nat"
+# Ajout de la régle de NAT au boot du RPI
+echo 'iptables-restore < /etc/iptables.ipv4.nat' >> /etc/rc.local
+# Redémarrage des services
+systemctl daemon-reload
+/etc/init.d/hostapd restart
