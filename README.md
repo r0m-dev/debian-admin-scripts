@@ -1,4 +1,5 @@
-# debian-post-install
+# Debian admin scripts
+## Post-install script
 > Debian tunning after fresh install :sparkles:
 Téléchargement du script
 ```bash
