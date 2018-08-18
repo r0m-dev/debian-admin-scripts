@@ -24,3 +24,13 @@ sysctl -p
 # Autoriser le Root login via SSH
 sed -i "s/.*PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 service sshd restart
+
+BASHRCCONF=/root/.bashrc
+cat > $BASHRCCONF <<EOF
+neofetch
+alias ippub="curl http://ifconfig.me/ip"
+alias ipeth0="$(ifconfig eth0 | grep -w 'inet' | awk '{print $2}')"
+alias ipwlan0="$(ifconfig wlan0 | grep -w 'inet' | awk '{print $2}')"
+EOF
+
+source ~/.bashrc

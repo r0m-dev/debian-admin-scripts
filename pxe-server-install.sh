@@ -157,7 +157,6 @@ option PXE.mtftp-tmout code 4 = unsigned integer 8;
 option PXE.mtftp-delay code 5 = unsigned integer 8;
 option arch code 93 = unsigned integer 16;
 
-
 subnet 192.168.1.0 netmask 255.255.255.0 {
   range 192.168.1.10 192.168.1.50;
   option broadcast-address 192.168.1.255;
@@ -176,13 +175,6 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
         } else {
                 filename "bios/pxelinux.0";
         }
-}
-
-subnet 192.168.100.0 netmask 255.255.255.0 {
-  range 192.168.100.10 192.168.100.200;
-  option broadcast-address 192.168.100.255;
-  option routers 192.168.100.254;
-  option domain-name-servers 192.168.100.254;
 }
 EOF
 
