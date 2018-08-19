@@ -2,7 +2,7 @@
 echo 'Interface(s) : '
 read ETH
 # Installation des pré-requis
-apt-get update && apt install -yy nfs-kernel-server tftpd-hpa syslinux-efi pxelinux
+apt-get update && apt install nfs-kernel-server isc-dhcp-server tftpd-hpa syslinux-efi pxelinux -yy
 
 echo '/srv/tftp/boot *(ro,async,no_root_squash,no_subtree_check)' >> /etc/exports
 service nfs-kernel-server restart
