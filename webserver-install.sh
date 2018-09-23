@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Installation en cours..."
 echo "------------------------------------------------------"
 apt-get update && apt-get full-upgrade -yy -qq > /dev/null
