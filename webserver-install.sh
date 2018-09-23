@@ -40,6 +40,6 @@ echo "-------------------------------------------------------------"
 echo " # MySQL"
 echo " Votre mot de passe MySQL est le suivant : "$rand
 echo ""
-echo " # Certbot-auto"
+echo " # Certbot-auto (Letsencrypt)"
 echo " ./certbot-auto se trouve dans le répertoire /opt "
 echo "-------------------------------------------------------------"
