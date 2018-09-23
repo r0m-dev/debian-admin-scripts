@@ -4,7 +4,7 @@ echo "------------------------------------------------------"
 apt-get update && apt-get full-upgrade -yy -qq > /dev/null
 echo "Mise à jour : OK"
 # Pré-requis
-apt-get install htop net-tools software-properties-common build-essential fail2ban -yy -qq > /dev/null
+apt-get install htop net-tools software-properties-common build-essential fail2ban git curl -yy -qq > /dev/null
 # Installation de Apache 2
 apt-get install apache2 -yy -qq > /dev/null
 a2enmod rewrite
