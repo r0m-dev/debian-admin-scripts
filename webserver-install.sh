@@ -19,7 +19,16 @@ mysql -uroot -p$rand -e "FLUSH PRIVILEGES;"
 apt install php7.0 libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json php7.0-gd php7.0-mcrypt php7.0-intl php7.0-sqlite3 php7.0-gmp php7.0-mbstring  php7.0-xml php7.0-zip -yy
 # Installation de Certbot auto pour apache
 apt install python-certbot-apache -yy
+cd /opt
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
 clear
 echo "-------------------------------------------------------------"
-echo "Votre mot de passe MySQL est le suivant : "$rand
+echo " Installation terminée"
+echo "-------------------------------------------------------------"
+echo " # MySQL"
+echo " Votre mot de passe MySQL est le suivant : "$rand
+echo ""
+echo " # Certbot-auto"
+echo " ./certbot-auto se trouve dans le répertoire /opt "
 echo "-------------------------------------------------------------"
