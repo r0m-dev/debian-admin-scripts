@@ -4,6 +4,9 @@ apt update && apt full-upgrade -yy
 apt install htop net-tools software-properties-common build-essential fail2ban -yy
 # Installation de Apache 2
 apt install apache2 -yy
+a2enmod rewrite
+a2enmod ssl
+a2enmod proxy
 # Generate pass
 rand=$(head -c 100 /dev/urandom | tr -dc A-Za-z0-9 | head -c13)
 # Préparation de l'installation de Mariadb
@@ -22,6 +25,8 @@ apt install python-certbot-apache -yy
 cd /opt
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
+# Reload Apache2
+systemctl restart apache2
 clear
 echo "-------------------------------------------------------------"
 echo " Installation terminée"
