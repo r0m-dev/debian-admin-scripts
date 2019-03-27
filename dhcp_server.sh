@@ -1,3 +1,4 @@
+#!/bin/sh
 # Pre-requis
 apt-get update && apt-get install isc-dhcp-server -yy
 # Conf DHCP
@@ -19,8 +20,10 @@ subnet 192.168.17.0 netmask 255.255.255.0 {
 }
 EOF
 
-# Edition du fichier de configuration
-nano /etc/default/isc-dhcp-server
-# Contenu à modifier
-INTERFACES="eth0"
-```
+sed -i '/INTERFACES=/c\INTERFACES=\"eth0\"' /etc/default/isc-dhcp-server
+
+# Redémarrage du service DHCP
+service isc-dhcp-server restart
+
+# Lancement au démarrage
+update-rc.d isc-dhcp-server enable
