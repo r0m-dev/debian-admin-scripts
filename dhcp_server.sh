@@ -2,7 +2,7 @@
 apt-get update && apt-get install isc-dhcp-server -yy
 ```
 # nano /etc/dhcp/dhcpd.conf 
-```shell
+```{r, engine='bash', count_lines}
 ddns-update-style none;
 option domain-name "local.lan";
 option domain-name-servers 9.9.9.9, 1.1.1.1;
