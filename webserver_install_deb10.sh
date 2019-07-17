@@ -1,5 +1,5 @@
 #!/bin/bash
-apt update && apt-upgrade -yy
+apt update && apt upgrade -yy
 # Generate MariaDB password
 rand=$(head -c 100 /dev/urandom | tr -dc A-Za-z0-9 | head -c13)
 # Conf Mariadb
@@ -35,6 +35,6 @@ a2enconf adminer.conf
 /etc/init.d/apache2 restart
 /etc/init.d/mysql restart
 # Get infos
-echo -ne "----------------------------------------------------"
-echo -ne "Your MariaDB password : "$rand
-echo -ne "----------------------------------------------------"
+echo "----------------------------------------------------"
+echo "Your MariaDB password : "$rand
+echo "----------------------------------------------------"
