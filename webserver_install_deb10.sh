@@ -14,6 +14,8 @@ apt -y install git htop net-tools software-properties-common build-essential fai
 cd /opt
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
+# Apache module desactivation
+a2dismod mpm_event
 # Apache module activation
 a2enmod php7.3
 a2enmod rewrite
