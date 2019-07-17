@@ -39,4 +39,5 @@ a2enconf adminer.conf
 # Get infos
 echo "----------------------------------------------------"
 echo "Your MariaDB password : "$rand
+echo "Adminer URL : http://[YOUR_SERVER_IP]/adminer.php"
 echo "----------------------------------------------------"
