@@ -9,7 +9,7 @@ debconf-set-selections <<< "mariadb-server mysql-server/root_password_again pass
 # Packages installation
 apt -y install php php-common
 apt -y install php-cli php-fpm php-json php-pdo php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
-apt -y install git htop net-tools software-properties-common build-essential fail2ban curl unzip apache2 libapache2-mod-php python-certbot-apache open-vm-to$
+apt -y install git htop net-tools software-properties-common build-essential fail2ban curl unzip apache2 libapache2-mod-php python-certbot-apache open-vm-tools
 # Certbot installation
 cd /opt
 wget https://dl.eff.org/certbot-auto
