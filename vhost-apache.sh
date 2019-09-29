@@ -2,8 +2,11 @@
 #https://github.com/yurygoncharuk/working_with_args/blob/master/parse-options.sh
 # default webpath
 web_path="/var/www"
-
 VHOST_TYPE="default"
+
+# Add -a option to add vhost
+# Add -d option to del vhost
+# Add -r option to remove vhost
 
 # read the options
 TEMP=`getopt -o -hu:t:p: --long help,url:,type:,port: -n "vhost.sh" -- "$@"`
