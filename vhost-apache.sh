@@ -57,8 +57,9 @@ cat > $VHOST_CONF <<EOF
 </VirtualHost>
 EOF
 
-a2ensite $URL
+mkdir -p $web_path/$URL/
 chown -R www-data:www-data $web_path/$URL/
+a2ensite $URL
 systemctl reload apache2
 
 echo "Your vhost has been created and is now usable !"
@@ -86,8 +87,9 @@ cat > $VHOST_CONF <<EOF
 </VirtualHost>
 EOF
 
-a2ensite $URL
+mkdir -p $web_path/$URL/
 chown -R www-data:www-data $web_path/$URL/
+a2ensite $URL
 systemctl reload apache2
 
 echo "Your vhost has been created and is now usable !"
