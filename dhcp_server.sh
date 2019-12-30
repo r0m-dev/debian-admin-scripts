@@ -26,4 +26,4 @@ sed -i '/INTERFACES=/c\INTERFACES=\"eth0\"' /etc/default/isc-dhcp-server
 service isc-dhcp-server restart
 
 # Lancement au démarrage
-update-rc.d isc-dhcp-server enable
+systemctl enable isc-dhcp-server
