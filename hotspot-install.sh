@@ -6,6 +6,7 @@ read WIFIKEY
 apt-get update && apt-get install iptables-persistent isc-dhcp-server hostapd -yy
 
 sed -i '/INTERFACESv4=/c\INTERFACESv4=\"wlan0\"' /etc/default/isc-dhcp-server
+ifconfig wlan0 192.168.100.254/24
 
 DHCPCONF=/etc/dhcp/dhcpd.conf
 cat > $DHCPCONF <<EOF
