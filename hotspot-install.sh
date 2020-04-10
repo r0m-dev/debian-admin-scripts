@@ -61,8 +61,9 @@ iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 iptables-save > /etc/iptables/rules.v4
 # Redémarrage des services
 systemctl daemon-reload
-service hostapd stop
-service hostapd start
+systemctl unmask hostapd
+systemctl enable hostapd
+systemctl start hostapd
 
 # Installation de TOR
 apt-get install tor -yy
