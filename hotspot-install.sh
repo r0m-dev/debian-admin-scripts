@@ -80,3 +80,13 @@ systemctl start hostapd
 update-rc.d hostapd enable
 update-rc.d isc-dhcp-server enable
 
+iptables-save > /etc/iptables/rules.v4
+
+IPTABLESCONF=/etc/network/if-up.d/iptables
+
+cat > $IPTABLESCONF <<EOF
+#!/bin/bash
+iptables-apply /etc/iptables/rules.v4
+EOF
+
+chmod +x /etc/network/if-up.d/iptables
